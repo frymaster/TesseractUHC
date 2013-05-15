@@ -9,12 +9,14 @@ import com.martinbrook.tesseractuhc.listeners.ChatListener;
 import com.martinbrook.tesseractuhc.listeners.LoginListener;
 import com.martinbrook.tesseractuhc.listeners.MatchListener;
 import com.martinbrook.tesseractuhc.listeners.SpectateListener;
+import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 
 public class TesseractUHC extends JavaPlugin {
 	private static TesseractUHC instance = null;
 	public static final ChatColor MAIN_COLOR = ChatColor.GREEN, SIDE_COLOR = ChatColor.GOLD, OK_COLOR = ChatColor.GREEN, WARN_COLOR = ChatColor.LIGHT_PURPLE, ERROR_COLOR = ChatColor.RED,
 			DECISION_COLOR = ChatColor.GOLD, ALERT_COLOR = ChatColor.GREEN;
 	private UhcMatch match;
+	private WorldEditPlugin wep;
 	
 	/**
 	 * Get the singleton instance of UhcTools
@@ -24,12 +26,14 @@ public class TesseractUHC extends JavaPlugin {
 	public static TesseractUHC getInstance() { return instance; }
 	
 	public UhcMatch getMatch() { return match; }
+	
+	public WorldEditPlugin getWorldEditPlugin(){return wep;	}
 
 	public void onEnable() {
 		
 		// Store singleton instance
 		instance = this;
-
+		wep = (WorldEditPlugin) this.getServer().getPluginManager().getPlugin("WorldEdit");
 		saveDefaultConfig();
 		match = new UhcMatch(this, getServer().getWorlds().get(0), getConfig());
 	
@@ -80,6 +84,7 @@ public class TesseractUHC extends JavaPlugin {
 		getCommand("pvp").setExecutor(new PvpCommand(this));
 		getCommand("spectate").setExecutor(new SpectateCommand(this));
 		getCommand("nv").setExecutor(new NvCommand(this));
+		getCommand("createSpawn").setExecutor(new CreateSpawnCommand(this));
 	}
 		
 		
