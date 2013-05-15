@@ -9,14 +9,17 @@ import com.martinbrook.tesseractuhc.UhcSpectator;
 
 public class CreatespawnCommand extends UhcCommandExecutor{
 
+	private TesseractUHC plugin;
+	
 	public CreatespawnCommand(TesseractUHC plugin) {
 		super(plugin);
+		this.plugin = plugin;
 		
 	}
 
 	@Override
 	protected String runAsAdmin(UhcSpectator sender, String[] args)  {
-		if(instance.getWorldEditPlugin() ==null){
+		if(plugin.getWorldEditPlugin() ==null){
 			return ERROR_COLOR +"World Edit is not installed.";
 		}else{
 		Player p = sender.getPlayer().getPlayer();

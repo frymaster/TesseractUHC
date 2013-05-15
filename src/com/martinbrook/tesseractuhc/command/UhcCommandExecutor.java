@@ -16,7 +16,6 @@ import com.martinbrook.tesseractuhc.UhcSpectator;
 public abstract class UhcCommandExecutor implements CommandExecutor {
 	protected UhcMatch match;
 	protected Server server;
-	protected TesseractUHC instance;
 	
 	public static final ChatColor MAIN_COLOR = ChatColor.GREEN, SIDE_COLOR = ChatColor.GOLD, OK_COLOR = ChatColor.GREEN, WARN_COLOR = ChatColor.LIGHT_PURPLE, ERROR_COLOR = ChatColor.RED,
 			DECISION_COLOR = ChatColor.GOLD, ALERT_COLOR = ChatColor.GREEN;
@@ -24,7 +23,6 @@ public abstract class UhcCommandExecutor implements CommandExecutor {
 	public UhcCommandExecutor(TesseractUHC plugin) {
 		this.match = plugin.getMatch();
 		this.server = plugin.getServer();
-		this.instance= TesseractUHC.getInstance();
 		
 	}
 
