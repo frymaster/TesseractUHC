@@ -7,9 +7,9 @@ import com.martinbrook.tesseractuhc.UhcSpectator;
 
 
 
-public class CreateSpawnCommand extends UhcCommandExecutor{
+public class CreatespawnCommand extends UhcCommandExecutor{
 
-	public CreateSpawnCommand(TesseractUHC plugin) {
+	public CreatespawnCommand(TesseractUHC plugin) {
 		super(plugin);
 		
 	}

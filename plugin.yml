@@ -132,6 +132,6 @@ commands:
  nv:
   description: Enables/disables night vision on spectators
   usage: /nv on | off
- createSpawn:
+ createspawn:
   description: Creates a spawn platform
-  usage: /createSpawn
+  usage: /createspawn
